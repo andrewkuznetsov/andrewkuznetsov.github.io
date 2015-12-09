@@ -1,0 +1,345 @@
+<html>
+<head>
+	<title>BAMPFA Student Committee</title>
+	
+	<link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			document.body.style.overflow = "hidden";
+			var viewportHeight = $(window).height();
+			document.body.style.overflow = "";
+			$(".fill").css("min-height", viewportHeight - 100);
+
+			$("a[href='#about_us']").click(function() {
+    			$('html, body').animate({scrollTop: $("a[name='about_us']").offset().top + 30}, 1500);
+    			$('#bottombar .selected').removeClass('selected');
+    			$('#bottombar .about_us').addClass('selected');
+			});
+			$("a[href='#meet_us']").click(function() {
+    			$('html, body').animate({scrollTop: $("a[name='meet_us']").offset().top + 30}, 1500);
+    			$('#bottombar .selected').removeClass('selected');
+    			$('#bottombar .meet_us').addClass('selected');
+			});
+			$("a[href='#calendar']").click(function() {
+    			$('html, body').animate({scrollTop: $("a[name='calendar']").offset().top + 30}, 1500);
+    			$('#bottombar .selected').removeClass('selected');
+    			$('#bottombar .calendar').addClass('selected');
+			});
+			$("a[href='#zine']").click(function() {
+    			$('html, body').animate({scrollTop: $("a[name='zine']").offset().top + 30}, 1500);
+    			$('#bottombar .selected').removeClass('selected');
+    			$('#bottombar .zine').addClass('selected');
+			});
+			$("a[href='#application']").click(function() {
+    			$('html, body').animate({scrollTop: $("a[name='application']").offset().top + 30}, 1500);
+    			$('#bottombar .selected').removeClass('selected');
+    			$('#bottombar .application').addClass('selected');
+			});
+			$("a[href='#social']").click(function() {
+    			$('html, body').animate({scrollTop: $("a[name='social']").offset().top + 30}, 1500);
+    			$('#bottombar .selected').removeClass('selected');
+    			$('#bottombar .social').addClass('selected');
+			});
+			$("a[href='#top']").click(function() {
+    			$('html, body').animate({scrollTop: $("a[name='top']").offset().top + 30}, 1500);
+    			$('#bottombar .selected').removeClass('selected');
+    			$('#bottombar .top').addClass('selected');
+				$("#bottombar").animate({'bottom': '-100px'}, 1200);
+			});
+
+			$("ul#navigation li").click(function(){
+				$("#bottombar").animate({'bottom': '0px'}, 1200);
+			});
+		});
+	</script>
+	<style type="text/css">
+		body
+		{
+			margin: 0px;
+			overflow: hidden;
+		}
+		.fill
+		{
+			width: 100%;
+			color: #fff;
+			padding: 30px 50px;
+			overflow: hidden;
+			font-family: 'Raleway', sans-serif;
+			font-size: 15px;
+		}
+		a
+		{
+			text-decoration: none;
+			color: #FFF;
+		}
+		h1
+		{
+			font-family: 'Raleway', sans-serif;
+			font-weight: 800;
+			font-size: 45px;
+		}
+		/* color coding */
+		.a
+		{
+			background-color: #3abc98;
+			border: 1px solid transparent;
+		}
+		.b
+		{
+			background-color: #f57921;
+			border: 1px solid transparent;
+		}
+		.c
+		{
+			border: 1px solid transparent;
+			background-color: #24c0f0;
+		}
+		.d
+		{
+			background-color: #fcaa1a;
+			border: 1px solid transparent;
+		}
+		.e
+		{
+			background-color: #ed73ac;
+			border: 1px solid transparent;
+		}
+		.f
+		{
+			background-color: #ee3642;
+			border: 1px solid transparent;
+		}
+		/* navigation design */
+
+		.nav
+		{
+			background-color: #fff;
+			animation: gradient 50s infinite;
+			-webkit-animation: gradient 50s infinite;
+		}
+		@keyframes gradient
+		{
+			0% {background-color: #3abc98;}
+			20% {background-color: #24c0f0;}
+			40% {background-color: #fcaa1a;}
+			60% {background-color: #f57921;}
+			80% {background-color: #ee3642;}
+			100% {background-color: #3abc98;}
+		}
+		@-webkit-keyframes gradient
+		{
+			0% {background-color: #3abc98;}
+			20% {background-color: #24c0f0;}
+			40% {background-color: #fcaa1a;}
+			60% {background-color: #f57921;}
+			80% {background-color: #ee3642;}
+			100% {background-color: #3abc98;}
+		}
+		ul#navigation 
+		{
+			position: relative;
+			top: 50px;
+			font-family: 'Raleway', sans-serif;
+			font-weight: 200;
+			list-style: none;
+			float: left;
+			width: 90%;
+		}
+		#navigation li
+		{
+			display: inline-block;
+			font-size: 85px;
+			font-style: italic;
+			letter-spacing: 3px;
+			color: #FFF;
+			padding: 5px 10px;
+			float: left;
+			margin: 3px;
+		}
+		#navigation img
+		{
+			height: 332px;
+			float: right;
+		}
+		#navigation li:hover, #navigation li.selected, #navigation img:hover
+		{
+			color: black;
+			background-color: #fcff00;
+		}
+		/* fixed bottombar */
+
+		#bottombar
+		{
+			position: fixed;
+			bottom: -100px;
+			left: 0px;
+			width: 100%;
+			padding: 0px 30px 10px 30px;
+			z-index: 101;
+			text-align: center;
+
+		}
+		#bottombar li
+		{
+			display: inline-block;
+			list-style: none;
+			margin: 20px 5px 0px 5px;
+			font-family: 'Raleway', sans-serif;
+			font-weight: 400;
+			font-size: 25px;
+			font-style: italic;
+			letter-spacing: 1px;
+			box-shadow: 5px 5px #FFF;
+			padding: 0px 4px;
+		}
+		#bottombar li.selected, #bottombar li:hover{
+			background-color: yellow;
+			color: black;
+			box-shadow: 5px 5px #000;
+		}
+		#bottombar .top
+		{
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 14px;
+			font-weight: 800px;
+			animation: gradient 10s infinite;
+			-webkit-animation: gradient 10s infinite;
+		}
+
+		/* social */
+		#social span, #social a
+		{
+			margin-right: 15px;
+		}
+		#social a
+		{
+			background-color: #fff;
+			color: #f57921;
+			font-weight: 800;
+			padding: 5px;
+			border-radius: .9em;
+		}
+		#social a:hover
+		{
+			color: #fff;
+			background-color: #f57921;
+			font-weight: 800;
+			padding: 5px;
+		}
+		/* calendar */
+		#calendar span, #calendar a
+		{
+			background-color: #fff;
+			color: #ed73ac;
+			font-weight: 800;
+			padding: 5px;
+			border-radius: .9em;
+		}
+		#calendar span
+		{
+			font-size: 15px;
+			text-align: right;
+		}
+		#calendar a:hover
+		{
+			color: #fff;
+			background-color: #ed73ac;
+			font-weight: 800;
+			padding: 5px;
+		}
+		/* zine */
+		#zine  a
+		{
+			background-color: #fff;
+			color: #ee3642;
+			font-weight: 800;
+			padding: 5px;
+			border-radius: .9em;
+		}
+		#zine a:hover
+		{
+			color: #fff;
+			background-color: #ee3642;
+			font-weight: 800;
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<a name="top"></a>
+	<div class="fill nav">
+		<ul id="navigation">
+			<a href=""><li><img src ="file:///Users/andrewkuznetsov/Desktop/hide/bampfa.png"/></li></a>
+			<a href="http://www.bampfa.berkeley.edu/"><li class="a">BAMPFA</li></a>
+			<a href="#about_us"><li class="b">about us</li></a>
+			<a href="#meet_us"><li class="c">meet us</li></a>
+			<a href=""><li class="d">blog</li></a>
+			<a href="#calendar"><li class="e">calendar</li></a>
+			<a href="#zine"><li class="f">zine</li></a>
+			<a href="#application"><li class="a">apply</li></a>
+			<a href="#social"><li class="b">social</li></a>
+		</ul>
+	</div>
+
+	<!-- BAMPFA -->
+
+	<a name="about_us"></a>
+	<div class="fill b">
+		<h1>About us</h1>
+		<!-- Location -->
+	</div>
+
+	<a name="meet_us"></a>
+	<div class="fill c">
+		<h1>Meet us</h1>
+	</div>
+
+	<!-- Blog -->
+
+	<a name="calendar"></a>
+	<div class="fill e" id="calendar">
+		<h1>Calendar</h1>
+						<span>1/29</span> Spaced Out - The New BAMPFA's <a href="http://bampfa.berkeley.edu/about/gow">Grand Opening</a>
+		<br/><br/>		<span>2/5</span> SC Picks screens <i>The Forbidden Room</i> by Guy Maddin and Jason Staczek
+		<br/><br/>		<span>3/4</span> SC Picks screens <i>Finis Terrae</i> by Jean Epstein
+		<br/><br/>		<span>4/2</span> SC Picks screens <i>Kiki's Delivery Service</i> by Hayao Miyazaki
+	</div>
+
+	<a name="zine"></a>
+	<div class="fill f" id="zine">
+		<h1>The November Issue</h1>
+		<iframe width="500" height="393" src="//e.issuu.com/embed.html#22405658/31853760" frameborder="0" allowfullscreen></iframe>
+		<p> View all our zines <a href="https://issuu.com/bampfasc">on our issuu</a></p>
+		<p> <a href="#application">Apply</a> to join our zine subcommittee</p>
+	</div>
+
+	<a name="application"></a>
+	<div class="fill a">
+		<h1>Apply</h1>
+	</div>
+
+	<a name="social"></a>
+	<div class="fill b" id="social">
+		<h1>Social</h1>
+			<span>bampfasc@gmail.com</span>
+			<span>(510) - 642 - 0808</span>
+			<a href="https://www.facebook.com/bampfasc/">facebook</a>
+			<a href="https://www.instagram.com/bampfasc/">instagram</a>
+	</div>
+
+	<ul id="bottombar">
+		<a href="http://www.bampfa.berkeley.edu/"><li class="a">BAMPFA</li></a>
+		<a href="#about_us"><li class="b about_us">about us</li></a>
+		<a href="#meet_us"><li class="c meet_us">meet us</li></a>
+		<a href=""><li class="d">blog</li></a>
+		<a href="#calendar"><li class="e calendar">calendar</li></a>
+		<a href="#zine"><li class="f zine">zine</li></a>
+		<a href="#application"><li class="a application">apply</li></a>
+		<a href="#social"><li class="b social">social</li></a>
+		<a href="#top"><li class="top">return to top</li></a>
+	</ul>
+</body>
+</html>
