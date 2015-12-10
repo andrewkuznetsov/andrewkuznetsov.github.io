@@ -1,7 +1,8 @@
 <html>
 <head>
+	<link rel="icon" href="http://andrew.kuznet.net/bampfa.png"/>
 	<title>BAMPFA Student Committee</title>
-	
+
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
@@ -20,6 +21,11 @@
     			$('html, body').animate({scrollTop: $("a[name='meet_us']").offset().top + 30}, 1500);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .meet_us').addClass('selected');
+			});
+			$("a[href='#blog']").click(function() {
+    			$('html, body').animate({scrollTop: $("a[name='blog']").offset().top + 30}, 1500);
+    			$('#bottombar .selected').removeClass('selected');
+    			$('#bottombar .blog').addClass('selected');
 			});
 			$("a[href='#calendar']").click(function() {
     			$('html, body').animate({scrollTop: $("a[name='calendar']").offset().top + 30}, 1500);
@@ -64,7 +70,7 @@
 			width: 100%;
 			color: #fff;
 			padding: 30px 50px;
-			overflow: hidden;
+			overflow-y: hidden;
 			font-family: 'Raleway', sans-serif;
 			font-size: 15px;
 		}
@@ -120,21 +126,23 @@
 		}
 		@keyframes gradient
 		{
-			0% {background-color: #3abc98;}
-			20% {background-color: #24c0f0;}
-			40% {background-color: #fcaa1a;}
-			60% {background-color: #f57921;}
-			80% {background-color: #ee3642;}
-			100% {background-color: #3abc98;}
+			0% {background-color: #ee3642;}
+			20% {background-color: #ed73ac;}
+			40% {background-color: #f57921;}
+			60% {background-color: #fcaa1a;}
+			80% {background-color: #3abc98;}
+			90% {background-color: #24c0f0;}
+			100% {background-color: #ee3642;}
 		}
-		@-webkit-keyframes gradient
+		@keyframes gradient
 		{
-			0% {background-color: #3abc98;}
-			20% {background-color: #24c0f0;}
-			40% {background-color: #fcaa1a;}
-			60% {background-color: #f57921;}
-			80% {background-color: #ee3642;}
-			100% {background-color: #3abc98;}
+			0% {background-color: #ee3642;}
+			20% {background-color: #ed73ac;}
+			40% {background-color: #f57921;}
+			60% {background-color: #fcaa1a;}
+			80% {background-color: #3abc98;}
+			90% {background-color: #24c0f0;}
+			100% {background-color: #ee3642;}
 		}
 		ul#navigation 
 		{
@@ -265,6 +273,28 @@
 			font-weight: 800;
 			padding: 5px;
 		}
+		#zine .container 
+		{
+			width: 800px;
+		}
+		#zine .container p
+		{
+			float: right;
+			line-height: 300%;
+		}
+		/* meet us */
+		#meet_us .container
+		{
+			margin: none;
+		}
+		.container img
+		{
+			height: 30px;
+			width: 20px;
+			border: 2px solid #FFF;
+			margin-left: 10px;
+			margin-right: 30px;
+		}
 	</style>
 </head>
 
@@ -272,11 +302,11 @@
 	<a name="top"></a>
 	<div class="fill nav">
 		<ul id="navigation">
-			<a href=""><li><img src ="file:///Users/andrewkuznetsov/Desktop/hide/bampfa.png"/></li></a>
+			<a href=""><li><img src ="http://andrew.kuznet.net/bampfa.png"/></li></a>
 			<a href="http://www.bampfa.berkeley.edu/"><li class="a">BAMPFA</li></a>
 			<a href="#about_us"><li class="b">about us</li></a>
 			<a href="#meet_us"><li class="c">meet us</li></a>
-			<a href=""><li class="d">blog</li></a>
+			<a href="#blog"><li class="d">blog</li></a>
 			<a href="#calendar"><li class="e">calendar</li></a>
 			<a href="#zine"><li class="f">zine</li></a>
 			<a href="#application"><li class="a">apply</li></a>
@@ -293,11 +323,15 @@
 	</div>
 
 	<a name="meet_us"></a>
-	<div class="fill c">
+	<div class="fill c" id="meet_us">
 		<h1>Meet us</h1>
 	</div>
 
 	<!-- Blog -->
+	<a name="blog"></a>
+	<div class="fill d" id="blog">
+		<h1>Blog</h1>
+	</div>
 
 	<a name="calendar"></a>
 	<div class="fill e" id="calendar">
@@ -311,9 +345,14 @@
 	<a name="zine"></a>
 	<div class="fill f" id="zine">
 		<h1>The November Issue</h1>
-		<iframe width="500" height="393" src="//e.issuu.com/embed.html#22405658/31853760" frameborder="0" allowfullscreen></iframe>
-		<p> View all our zines <a href="https://issuu.com/bampfasc">on our issuu</a></p>
-		<p> <a href="#application">Apply</a> to join our zine subcommittee</p>
+		<div class="container">
+			<iframe width="500" height="393" src="//e.issuu.com/embed.	html#22405658/31853760" frameborder="0" allowfullscreen></iframe>
+			<p> 
+				View all our zines <a href="https://issuu.com/bampfasc">on our 	issuu</a>
+				<br/>
+				<a href="#application">Apply</a> to join our zine subcommittee
+			</p>
+		</div>
 	</div>
 
 	<a name="application"></a>
@@ -334,7 +373,7 @@
 		<a href="http://www.bampfa.berkeley.edu/"><li class="a">BAMPFA</li></a>
 		<a href="#about_us"><li class="b about_us">about us</li></a>
 		<a href="#meet_us"><li class="c meet_us">meet us</li></a>
-		<a href=""><li class="d">blog</li></a>
+		<a href="#blog"><li class="d blog">blog</li></a>
 		<a href="#calendar"><li class="e calendar">calendar</li></a>
 		<a href="#zine"><li class="f zine">zine</li></a>
 		<a href="#application"><li class="a application">apply</li></a>
