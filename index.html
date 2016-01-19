@@ -1,4 +1,5 @@
 <html>
+<!-- make calendar into table, add resize, add lightuplocation, create functional form, make app viewable only on certain dates -->
 <head>
 	<link rel="icon" href="http://andrew.kuznet.net/bampfa.png"/>
 	<title>BAMPFA Student Committee</title>
@@ -53,9 +54,17 @@
     			$('#bottombar .top').addClass('selected');
 				$("#bottombar").animate({'bottom': '-100px'}, 1200);
 			});
-
 			$("ul#navigation a").click(function(){
 				$("#bottombar").animate({'bottom': '0px'}, 1200);
+			});
+
+			$('#toStepTwo').click(function(){
+				$('#stepone').hide();
+				$('#steptwo').show();
+			});
+			$('#toStepOne').click(function(){
+				$('#steptwo').hide();
+				$('#stepone').show();
 			});
 		});
 	</script>
@@ -72,7 +81,11 @@
 			padding: 30px 50px;
 			overflow-y: hidden;
 			font-family: 'Raleway', sans-serif;
-			font-size: 15px;
+			font-size: 20px;
+		}
+		section, article, button
+		{
+			line-height: 1.5;
 		}
 		a
 		{
@@ -84,6 +97,14 @@
 			font-family: 'Raleway', sans-serif;
 			font-weight: 800;
 			font-size: 45px;
+		}
+		button
+		{
+			font-family: 'Raleway', sans-serif;
+			font-size: 20px;
+			border: none;
+			padding: none;
+			outline: none;
 		}
 		/* color coding */
 		.a
@@ -223,6 +244,7 @@
 		}
 
 		/* social */
+
 		#social span, #social a
 		{
 			margin-right: 15px;
@@ -242,29 +264,58 @@
 			font-weight: 800;
 			padding: 5px;
 		}
+
 		/* calendar */
-		#calendar span, #calendar a
+
+		#calendar #container
 		{
-			background-color: #fff;
-			color: #ed73ac;
+			width: 1050px;
+		}
+		#calendar .event
+		{
+			font-size: 20px;
+			border: 1px solid #fff;
+			width: 300px;
+			padding: 10px;
+			color: #fff;
+			height: 150px;
+			width: 150px;
+		}
+		#calendar .tab
+		{
+			font-size: 25px;
 			font-weight: 800;
+			color: #ed73ac;
+			background-color: #fff;
+			border: 1px solid #fff;
 			padding: 5px;
-			border-radius: .9em;
+			display: inline-block;
 		}
-		#calendar span
+		#calendar .tab:hover
 		{
-			font-size: 15px;
-			text-align: right;
+			cursor: pointer;
 		}
-		#calendar a:hover
+		#calendar .container
 		{
+			display: inline-block;
+			padding: 30px;
+		}
+		#calendar a
+		{
+			font-size: 14px;
 			color: #fff;
 			background-color: #ed73ac;
 			font-weight: 800;
 			padding: 5px;
+			border-radius: .9em;
+		}
+		#calendar a:hover
+		{
+			background-color: #fff;
+			color: #ed73ac;
 		}
 		/* zine */
-		#zine  a
+		#zine a
 		{
 			background-color: #fff;
 			color: #ee3642;
@@ -276,30 +327,110 @@
 		{
 			color: #fff;
 			background-color: #ee3642;
-			font-weight: 800;
-			padding: 5px;
 		}
 		#zine .container 
 		{
-			width: 800px;
+			width: 900px;
 		}
 		#zine .container p
 		{
 			float: right;
 			line-height: 300%;
 		}
-		/* meet us */
-		#meet_us .container
+
+		/* about us */
+
+		#about_us #blurb
 		{
-			margin: none;
+			padding: none;
+			width: 800px;
+			float: left;
+			padding-right: 25px;
+			border-right: 1px solid #FF974D;
+			margin: 0px 25px 0px 0px;
 		}
-		.container img
+		#about_us #location img
 		{
-			height: 30px;
-			width: 20px;
-			border: 2px solid #FFF;
-			margin-left: 10px;
-			margin-right: 30px;
+			width: 200px;
+		}
+		#about_us a:hover
+		{
+			color: #FF974D;
+		}
+
+		/* app */
+
+		#app .container
+		{
+			width: 1050px;
+		}
+		#app section#left
+		{
+			width: 400px;
+			margin: 0px 75px 0px 0px;
+			float: left;
+		}
+		#app section#right
+		{
+			width: 575px;
+			float: right;
+		}
+		#app input, textarea
+		{
+
+			font-size: 16px;
+			font-family: 'Raleway', sans-serif;
+			display: block;
+			background-color: #EDEDED;
+			color: #525363;
+			margin: none;
+			border: none;
+			outline: none;
+			resize: none;
+			overflow: auto;
+			padding: 10px;
+		}
+		#app input
+		{
+			width: 380px;
+		}
+		#app textarea
+		{
+			width: 600px;
+			padding: 10px 15px;
+		}
+		#app input:focus, #app textarea:focus
+		{
+			background-color: #DDD;
+		}
+		#app textarea:focus
+		{
+			min-height: 200px;
+		}
+		#steptwo
+		{
+			display: none;
+		}
+		#toStepTwo
+		{
+			padding: 10px;
+		}
+		.dummyLink
+		{
+			position: relative;
+			top: 15px;
+			background-color: #fff;
+			color: #3abc98;
+			font-weight: 800;
+			padding: 5px;
+			border-radius: .9em;
+			cursor: pointer;
+		}
+		.dummyLink:hover
+		{
+			color: #fff;
+			background-color: #3abc98;
+			display: inline;
 		}
 	</style>
 </head>
@@ -324,9 +455,17 @@
 	<!-- BAMPFA -->
 
 	<a name="about_us"></a>
-	<div class="fill b">
+	<div class="fill b" id="about_us">
 		<h1>About us</h1>
-		<!-- Location -->
+		<section id="blurb">
+			<p>The BAMPFA Student Committee works to connect students and the BAMPFA through outreach and events aimed at all parts of the student community. Each year, the Committee's activities range from small film screenings to spectacular multimedia parties for up to 2,000 students.</p>
+			<p>The Committee also performs an important role advocating for students' interests within the Museum and Archive. Committee members are represented on a number of BAMPFA committees including the Board of Trustees, and provide guidance when it comes to gearing BAMPFA programs to student audiences. </p>
+			<p>The BAMPFASC is recognized as being one of the finest and most successful programs of its kind in the US. The New York Philharmonic and the Metropolitan Museum of Art are among a number of major institutions that now model their student programs on ours. </p>
+		</section>
+		<section id="location">
+			<img src="http://press.bampfa.berkeley.edu/building/images/renderings/se-aerial.jpg"/>
+			<a href="http://bampfa.org/visit/getting-here"><p>2155 Center Street<br/>Berkeley, California</p></a>
+		</section>
 	</div>
 
 	<a name="meet_us"></a>
@@ -340,15 +479,44 @@
 		<h1>Blog</h1>
 	</div>
 
+	<!-- Calendar -->
 	<a name="calendar"></a>
 	<div class="fill e" id="calendar">
 		<h1>Calendar</h1>
-						<span>1/29</span> Spaced Out - The New BAMPFA's <a href="http://bampfa.berkeley.edu/about/gow">Grand Opening</a>
-		<br/><br/>		<span>2/5</span> SC Picks screens <i>The Forbidden Room</i> by Guy Maddin and Jason Staczek
-		<br/><br/>		<span>3/4</span> SC Picks screens <i>Finis Terrae</i> by Jean Epstein
-		<br/><br/>		<span>4/2</span> SC Picks screens <i>Kiki's Delivery Service</i> by Hayao Miyazaki
+
+		<div id="container">
+			<div class="container">
+				<div class="tab"> 29 jan</div>
+				<a href="https://www.facebook.com/events/685794678228852/">facebook</a>
+				<div class="event">
+					In Space - The New BAMPFA's Grand Opening<br/>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="tab"> 5 feb</div>
+				<div class="event">
+					SC Picks screens The Forbidden Room by Guy Maddin and Jason Staczek	
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="tab"> 4 march</div>
+				<div class="event">
+					SC Picks screens Finis Terrae by Jean Epstein	
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="tab"> 2 april</div>
+				<div class="event">
+					SC Picks screens Kiki's Delivery Service by Hayao Miyazaki
+				</div>
+			</div>
+		</div>
 	</div>
 
+	<!-- Zine -->
 	<a name="zine"></a>
 	<div class="fill f" id="zine">
 		<h1>The November Issue</h1>
@@ -362,11 +530,42 @@
 		</div>
 	</div>
 
+	<!-- Application -->
 	<a name="application"></a>
-	<div class="fill a">
-		<h1>Apply</h1>
+	<div class="fill a" id="app">
+		<div class="container">
+		<section id="left">
+			<h1>Apply</h1>
+				<p>Come and be a part of our innovative team. We're looking for Students, from <b>any</b> major and <b>any</b> year, to serve on the Committee this coming semester. We're especially interested in students who are active volunteers, willing contributors, great team players, and fun to work with. We are also looking for people with web, video, design, and multimedia skills, interests, and experience.</p>
+				<p>Complete our application in our convenient online format, or in <b>pdf format</b>. Submit all PDF applications by <a href="#social">email</a> and all additional materials to the <a href="#about_us" class="highlightLocation"> museum</a>. Paper copies of applications discouraged.</p>
+		</section>
+
+		<section id="right">
+			<div id="stepone">
+			<h2>Contact information</h2>
+				<input type="text" name="fullname" placeholder="Full name"/>
+				<input type="text" name="year" placeholder="Year"/>
+				<input type="text" name="major" placeholder="Major"/>
+				<input type="email" name="email" placeholder="Email"/>
+				<input type="text" name="phone" placeholder="Phone"/>
+				<span id="toStepTwo" class="dummyLink">Continue >></span>
+			</div>
+			<div id="steptwo">
+			<h2>Questions</h2>
+				<textarea class="input" placeholder="Why are you interested in joining the BAMPFA Student Committee?" maxlength="500"></textarea>
+				<textarea class="input" placeholder="What can you personally contribute to the Student Committee?" maxlength="500"></textarea>
+				<textarea class="input" placeholder="What would you like to see the Student Committee do for UCB students?" maxlength="500"></textarea>
+				<textarea class="input" placeholder="What specific skills can you bring to the Student Committee (expertise in journalism, multimedia, web design, videography, event planning, etc.)?" maxlength="500"></textarea>
+				<textarea class="input" placeholder="With what other campus organizations have you been/will you be involved this coming semester?" maxlength="500"></textarea>
+				<textarea class="input" placeholder="Anything else we should know about you?" maxlength="500"></textarea>
+				<span id="toStepOne" class="dummyLink"><< Back</span>  
+				<button type="submit" name="submit"class="dummyLink">Submit</button>
+			</div>
+		</section>
+		</div>
 	</div>
 
+	<!-- Social -->
 	<a name="social"></a>
 	<div class="fill b" id="social">
 		<h1>Social</h1>
