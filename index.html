@@ -5,57 +5,57 @@
 	<title>BAMPFA Student Committee</title>
 
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.19/dist/jquery.flip.min.js"></script>
+
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="jquery.flip.js"></script>
+
 	<script>
 		$(document).ready(function(){
-			document.body.style.overflow = "hidden";
-			var viewportHeight = $(window).height();
-			document.body.style.overflow = "";
-			$(".fill").css("min-height", viewportHeight - 100);
-
 			$("a[href='#about_us']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='about_us']").offset().top + 30}, 1500);
+    			$('html, body').animate({scrollTop: $("a[name='about_us']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .about_us').addClass('selected');
 			});
 			$("a[href='#meet_us']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='meet_us']").offset().top + 30}, 1500);
+    			$('html, body').animate({scrollTop: $("a[name='meet_us']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .meet_us').addClass('selected');
 			});
 			$("a[href='#blog']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='blog']").offset().top + 30}, 1500);
+    			$('html, body').animate({scrollTop: $("a[name='blog']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .blog').addClass('selected');
 			});
 			$("a[href='#calendar']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='calendar']").offset().top + 30}, 1500);
+    			$('html, body').animate({scrollTop: $("a[name='calendar']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .calendar').addClass('selected');
 			});
 			$("a[href='#zine']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='zine']").offset().top + 30}, 1500);
+    			$('html, body').animate({scrollTop: $("a[name='zine']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .zine').addClass('selected');
 			});
 			$("a[href='#application']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='application']").offset().top + 30}, 1500);
+    			$('html, body').animate({scrollTop: $("a[name='application']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .application').addClass('selected');
 			});
 			$("a[href='#social']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='social']").offset().top + 30}, 1500);
+    			$('html, body').animate({scrollTop: $("a[name='social']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .social').addClass('selected');
 			});
 			$("a[href='#top']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='top']").offset().top + 30}, 1500);
+    			$('html, body').animate({scrollTop: $("a[name='top']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .top').addClass('selected');
-				$("#bottombar").animate({'bottom': '-100px'}, 1200);
+				$("#bottombar").animate({'bottom': '-100px'}, 800);
 			});
 			$("ul#navigation a").click(function(){
-				$("#bottombar").animate({'bottom': '0px'}, 1200);
+				$("#bottombar").animate({'bottom': '0px'}, 800);
 			});
 
 			$('#toStepTwo').click(function(){
@@ -66,20 +66,22 @@
 				$('#steptwo').hide();
 				$('#stepone').show();
 			});
+			$(".staff").flip();
 		});
 	</script>
 	<style type="text/css">
 		body
 		{
 			margin: 0px;
-			overflow: hidden;
+			overflow-x: hidden;
 		}
 		.fill
 		{
 			width: 100%;
+			height: 150%;
 			color: #fff;
 			padding: 30px 50px;
-			overflow-y: hidden;
+			overflow-x: hidden;
 			font-family: 'Raleway', sans-serif;
 			font-size: 20px;
 		}
@@ -97,14 +99,6 @@
 			font-family: 'Raleway', sans-serif;
 			font-weight: 800;
 			font-size: 45px;
-		}
-		button
-		{
-			font-family: 'Raleway', sans-serif;
-			font-size: 20px;
-			border: none;
-			padding: none;
-			outline: none;
 		}
 		/* color coding */
 		.a
@@ -136,6 +130,10 @@
 		{
 			background-color: #ee3642;
 			border: 1px solid transparent;
+		}
+		.backgroundWhite
+		{
+			background-color: #FFF;
 		}
 		/* navigation design */
 
@@ -242,7 +240,38 @@
 			animation: gradient 10s infinite;
 			-webkit-animation: gradient 10s infinite;
 		}
-
+		/* meet us */
+		#meet_us #container
+		{
+			width: 1100px;
+		}
+		#meet_us .staff
+		{
+			width: 186px;
+			height: 186px;
+			font-size: 18px;
+			display: inline-block;
+			margin: 5px;
+		}
+		#meet_us img
+		{
+			width: 200px;
+			height: 200px;
+			cursor: pointer;
+		}
+		#meet_us .back
+		{
+			width: 200px;
+			height: 200px;
+			background-color: #FFF;
+			padding: 7px;
+			color: #24c0f0;
+			opacity: .8;
+		}
+		#meet_us .back:hover
+		{
+			opacity: .95;
+		}
 		/* social */
 
 		#social span, #social a
@@ -357,7 +386,11 @@
 		{
 			color: #FF974D;
 		}
-
+		/* blog */
+		#blog article
+		{
+			width: 900px;
+		}
 		/* app */
 
 		#app .container
@@ -416,22 +449,34 @@
 		{
 			padding: 10px;
 		}
-		.dummyLink
+		.dummyLink, button
 		{
 			position: relative;
 			top: 15px;
 			background-color: #fff;
 			color: #3abc98;
 			font-weight: 800;
-			padding: 5px;
+			padding: 5px !important;
 			border-radius: .9em;
 			cursor: pointer;
+			display: inline;
 		}
-		.dummyLink:hover
+		.dummyLink:hover, button:hover
 		{
 			color: #fff;
 			background-color: #3abc98;
 			display: inline;
+		}
+		#app button
+		{
+			font-family: 'Raleway', sans-serif;
+			font-size: 20px;
+			border: none;
+			padding: 5px;
+			outline: none;
+			float: right;
+			position: relative;
+			top: 15px;
 		}
 	</style>
 </head>
@@ -444,7 +489,7 @@
 			<a href="http://www.bampfa.berkeley.edu/"><li class="a">BAMPFA</li></a>
 			<a href="#about_us"><li class="b">about us</li></a>
 			<a href="#meet_us"><li class="c">meet us</li></a>
-			<a href="#blog"><li class="d">blog</li></a>
+			<a href="#blog"><li class="d">news</li></a>
 			<a href="#calendar"><li class="e">calendar</li></a>
 			<a href="#zine"><li class="f">zine</li></a>
 			<a href="#application"><li class="a">apply</li></a>
@@ -472,12 +517,163 @@
 	<a name="meet_us"></a>
 	<div class="fill c" id="meet_us">
 		<h1>Meet us</h1>
+		<div id="container">
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Emily Szasz <br/>
+					<b>Year</b> Third <br/>
+					<b>Major</b> History of Art <br/>
+					<b>What is a life philosophy you've been living by?</b> If you sit at Strada long enough, the world will come to you. 
+				</div>
+			</div>
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Andrew Kuznetsov <br/>
+					<b>Year</b> First <br/>
+					<b>Major</b> Comparative Literature <br/>
+					<b>What is a life philosophy you've been living by?</b> None
+				</div>
+			</div>
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Valerie Chua <br/>
+					<b>Year</b> Second <br/>
+					<b>Major</b> Sociology <br/>
+					<b>Why should people come to a BAMPFA event?</b> To learn and interact with the beauty that surrounds us
+				</div>
+			</div>
+
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Ronica Gajjar <br/>
+					<b>Year</b> Third <br/>
+					<b>Major</b> Integrative Biology <br/>
+					<b>What is the best advice you've received recently?</b> Believe in your flyness. Conquer your shyness.
+				</div>
+			</div>
+
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Alex Croft <br/>
+					<b>Year</b> First <br/>
+					<b>Major</b> Architecture <br/>
+					<b>What is a life philosophy you've been living by?</b> If it's meant to be, it will be.
+				</div>
+			</div>
+
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Scarlet Cummings <br/>
+					<b>Year</b> Fourth <br/>
+					<b>Majors</b> History of Art, Film Studies <br/>
+					<b>What is a life philosophy you've been living by?</b> Pretending to live in the present while woefully dwelling in the past and agonzing over the future. You could say it's working.
+				</div>
+			</div>
+
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Rosa Wan  <br/>
+					<b>Year</b> Third <br/>
+					<b>Major</b> Film Studies  <br/>
+					<b>What is the best advice you've received recently?</b> "If you like it, put some ketchup on it" 
+				</div>
+			</div>
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Ethan Silver <br/>
+					<b>Year</b> First <br/>
+					<b>Majors</b> Art Practice, Ethnic Studies <br/>
+					<b>Why should people come to a BAMPFA event?</b> Skate or die
+				</div>
+			</div>
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Theo Dumothier <br/>
+					<b>Year</b> Second <br/>
+					<b>Major</b> Philosophy <br/>
+					<b>What is a life philosophy you've been living by?</b> Because "art is the highest task and true metaphysical activity of this life"
+				</div>
+			</div>
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Sam Daly <br/>
+					<b>Year</b> Third <br/>
+					<b>Major</b> Film Studies  <br/>
+					<b>Why should people come to a BAMPFA event?</b> art is one of the most important things you can participate in.
+				</div>
+			</div>
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Kelsey Schiedermayer <br/>
+					<b>Year</b> Third <br/>
+					<b>Majors</b> History, History of Art<br/>
+					<b>What is the best advice you've received recently?</b> "learn to do common things uncommonly well"
+				</div>
+			</div>
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Andrew Kodama <br/>
+					<b>Year</b> Fourth <br/>
+					<b>Major</b> Sociology <br/>
+					<b>Why should people come to a BAMPFA event?</b> why not        \_(ツ)_/¯
+				</div>
+			</div>
+
+			<div class="staff">
+				<div class="front"><img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg"/></div>
+				<div class="back">
+					<b>Name</b> Eva Phillips <br/>
+					<b>Year</b> Second <br/>
+					<b>Majors</b> Sustainable Environmental Design, City and Regional Planning <br/>
+					<b>What is the best advice you've received recently?</b> noone cares about how you answer the question, “What are you doing with your life?"
+				</div>
+			</div>
+
+
+		</div>
 	</div>
 
 	<!-- Blog -->
 	<a name="blog"></a>
 	<div class="fill d" id="blog">
 		<h1>Blog</h1>
+		<article>
+			<h4>Final Days and Finishing Touches</h4>
+
+			<p>One full year after the closing of the museum's building on Bancroft, the Berkeley Art Museum and Pacific Film Archive is reopening this week in its brand new home in downtown Berkeley. Surrounded by the restaurants that Berkeley is known for, in view of UC Berkeley campus, and just a few blocks away from the Downtown Berkeley BART station, the Berkeley Art Museum and the Pacific Film Archive is poised to take its place as not only one of the best and most unique parts of UC Berkeley, but also as a serious Bay Area museum, contending with similar institutions in Oakland and San Francisco with its impressive collection and gorgeous, state-of-the-art facility.</p>
+
+			<p>The museum's new home is resplendent, with a curving steel shell around the PFA's new theater and a crisp white coat of paint on the museum itself. The museum is announced by two steel signs, one of which lies lengthwise across the building on Center Street and reads 'Berkeley Art Museum & Pacific Film Archive,' and the other of which reads 'BAMPFA' in bold lettering, announcing the building on Oxford Street; the building hardly needs an introduction, however, standing out among downtown Berkeley's eclectic building styles with its modern, innovative, and elegant design.</p>
+
+			<p>The building itself, designed by design studio Diller Scofidio + Renfro, is a work of art, but that's just the beginning; within the museum itself is housed a wealth of art objects, ranging from an impressive collection of modern and contemporary pieces to a huge variety of East Asian art objects made centuries ago. The museum's collection is as diverse as UC Berkeley, the university which it caters to and represents, and there is something in the new building for everyone to enjoy, whether they have a pre-existing knowledge of art or not. Some of the museum's permanent collection will be on view at the museum's opening; however, the opening exhibition, curated by BAMPFA Director (and previous MATRIX Curator) Larry Rinder and named The Architecture of Life, also draws from and displays works from museums and private collections around the country. The exhibition, impressive in its scope, explores how architecture and the concept of building connect to all aspects of our lives, drawing on all varieties of art, from navigational charts from the Marshall Islands to modern paintings to explore this theme. Even the building itself ties into this theme with its sustainable design practices and features.</p>
+
+			<p>So when do you get to check it out? This Friday, January 29th from 8-11 PM, the BAMPFA Student Committee is hosting an exclusive student preview of the new building. With <a href="https://www.facebook.com/events/685794678228852/"><b>In Space: BAMPFA Student Opening Party</b></a>, the Student Committee invites UC Berkeley students into their new campus museum before it opens to the public, and it's going to be a PARTY—in addition to exploring the beautiful new space and the Architecture of Life exhibition, students can enjoy refreshments, tunes spun by a student DJ, a photo booth, and a game room, and are invited to participate in both a collaborative art activity and installation and a photo-based scavenger hunt for a chance to win gift cards to local businesses. We can't wait to celebrate with the UC Berkeley campus – meet me at the museum!</p>
+
+			<p>-- Emily Szasz, Co-Chair, BAMPFA SC</p>
+		</article>
 	</div>
 
 	<!-- Calendar -->
@@ -538,30 +734,32 @@
 		<section id="left">
 			<h1>Apply</h1>
 				<p>Come and be a part of our innovative team. We're looking for Students, from <b>any</b> major and <b>any</b> year, to serve on the Committee this coming semester. We're especially interested in students who are active volunteers, willing contributors, great team players, and fun to work with. We are also looking for people with web, video, design, and multimedia skills, interests, and experience.</p>
-				<p>Complete our application in our convenient online format, or in <b>pdf format</b>. Submit all PDF applications by <a href="#social">email</a> and all additional materials to the <a href="#about_us" class="highlightLocation"> museum</a>. Paper copies of applications discouraged.</p>
+				<p>Complete our application in our online format, or <b>download it</b>. Submit all applications by <a href="#social">email</a> and all additional materials to the museum. Paper copies of applications discouraged.</p>
 		</section>
 
 		<section id="right">
-			<div id="stepone">
-			<h2>Contact information</h2>
-				<input type="text" name="fullname" placeholder="Full name"/>
-				<input type="text" name="year" placeholder="Year"/>
-				<input type="text" name="major" placeholder="Major"/>
-				<input type="email" name="email" placeholder="Email"/>
-				<input type="text" name="phone" placeholder="Phone"/>
-				<span id="toStepTwo" class="dummyLink">Continue >></span>
-			</div>
-			<div id="steptwo">
-			<h2>Questions</h2>
-				<textarea class="input" placeholder="Why are you interested in joining the BAMPFA Student Committee?" maxlength="500"></textarea>
-				<textarea class="input" placeholder="What can you personally contribute to the Student Committee?" maxlength="500"></textarea>
-				<textarea class="input" placeholder="What would you like to see the Student Committee do for UCB students?" maxlength="500"></textarea>
-				<textarea class="input" placeholder="What specific skills can you bring to the Student Committee (expertise in journalism, multimedia, web design, videography, event planning, etc.)?" maxlength="500"></textarea>
-				<textarea class="input" placeholder="With what other campus organizations have you been/will you be involved this coming semester?" maxlength="500"></textarea>
-				<textarea class="input" placeholder="Anything else we should know about you?" maxlength="500"></textarea>
-				<span id="toStepOne" class="dummyLink"><< Back</span>  
-				<button type="submit" name="submit"class="dummyLink">Submit</button>
-			</div>
+			<form action="application.php" method="post">
+				<div id="stepone">
+				<h2>Contact information</h2>
+					<input type="text" name="fullname" placeholder="Full name"/>
+					<input type="text" name="year" placeholder="Year"/>
+					<input type="text" name="major" placeholder="Major"/>
+					<input type="email" name="email" placeholder="Email"/>
+					<input type="text" name="phone" placeholder="Phone"/>
+					<span id="toStepTwo" class="dummyLink">Continue</span>
+				</div>
+				<div id="steptwo">
+				<h2>Questions</h2>
+					<textarea class="input" placeholder="Why are you interested in joining the BAMPFA Student Committee?" maxlength="500"></textarea>
+					<textarea class="input" placeholder="What can you personally contribute to the Student Committee?" maxlength="500"></textarea>
+					<textarea class="input" placeholder="What would you like to see the Student Committee do for UCB students?" maxlength="500"></textarea>
+					<textarea class="input" placeholder="What specific skills can you bring to the Student Committee (expertise in journalism, multimedia, web design, videography, event planning, etc.)?" maxlength="500"></textarea>
+					<textarea class="input" placeholder="With what other campus organizations have you been/will you be involved this coming semester?" maxlength="500"></textarea>
+					<textarea class="input" placeholder="Anything else we should know about you?" maxlength="500"></textarea>
+					<span id="toStepOne" class="dummyLink">Back</span>  
+					<button type="submit" name="submit">Submit</button>
+				</div>
+			</form>
 		</section>
 		</div>
 	</div>
