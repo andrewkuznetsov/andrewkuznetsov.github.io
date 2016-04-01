@@ -153,15 +153,15 @@
 			90% {background-color: #24c0f0;}
 			100% {background-color: #ee3642;}
 		}
-		@keyframes gradient
+		@keyframes textGradient
 		{
-			0% {background-color: #ee3642;}
-			20% {background-color: #ed73ac;}
-			40% {background-color: #f57921;}
-			60% {background-color: #fcaa1a;}
-			80% {background-color: #3abc98;}
-			90% {background-color: #24c0f0;}
-			100% {background-color: #ee3642;}
+			0% {color: #ee3642;}
+			20% {color: #ed73ac;}
+			40% {color: #f57921;}
+			60% {color: #fcaa1a;}
+			80% {color: #3abc98;}
+			90% {color: #24c0f0;}
+			100% {color: #ee3642;}
 		}
 		ul#navigation 
 		{
@@ -302,13 +302,12 @@
 		}
 		#calendar .event
 		{
-			font-size: 20px;
+			font-size: 18px;
 			border: 1px solid #fff;
-			width: 300px;
 			padding: 10px;
 			color: #fff;
-			height: 150px;
-			width: 150px;
+			min-height: 125px;
+			width: 135px;
 		}
 		#calendar .tab
 		{
@@ -327,9 +326,27 @@
 		#calendar .container
 		{
 			display: inline-block;
-			padding: 30px;
+			padding: 20px;
 		}
-		#calendar a
+		#calendar .push
+		{
+			position: relative;
+			top: 50px;
+		}
+		#calendar .BAMFEST
+		{
+			font-size: 50px;
+			font-weight: bold;
+			word-wrap: break-word;
+			line-height: 80%;
+			text-align: center;
+		}
+		#calendar .BAMFEST:hover
+		{
+			animation: gradient 5s infinite;
+			-webkit-animation: gradient 5s infinite;
+		}
+		#calendar a.fb
 		{
 			font-size: 14px;
 			color: #fff;
@@ -628,34 +645,48 @@
 		<h1>Calendar</h1>
 
 		<div id="container">
-			<div class="container">
-				<div class="tab"> 29 jan</div>
-				<a href="https://www.facebook.com/events/685794678228852/">facebook</a>
-				<div class="event">
-					In Space - The New BAMPFA's Grand Opening<br/>
-				</div>
-			</div>
 
-			<div class="container">
-				<div class="tab"> 12 feb</div>
-				<div class="event">
-					SC Picks screens The Forbidden Room by Guy Maddin and Jason Staczek	
-				</div>
-			</div>
 
-			<div class="container">
-				<div class="tab"> 4 march</div>
-				<div class="event">
-					SC Picks screens Finis Terrae by Jean Epstein	
-				</div>
-			</div>
-
-			<div class="container">
+			<div class="container push">
 				<div class="tab"> 2 april</div>
+				<a href="https://www.facebook.com/events/1669128163347880/" class="fb">facebook</a>
 				<div class="event">
 					SC Picks screens Kiki's Delivery Service by Hayao Miyazaki
 				</div>
 			</div>
+
+			<div class="container">
+				<div class="tab"> 8 april</div>
+				<!--<a href="https://www.facebook.com/events/1669128163347880/">facebook</a>-->
+				<div class="event">
+					<i>Right Now</i>, a night of student music and performance at BAMPFA.
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="tab"> 9 april</div>
+				<!--<a href="https://www.facebook.com/events/1669128163347880/">facebook</a>-->
+				<div class="event">
+					Student Committee Gallery Tour to <a href="http://www.b4bel4b.com/">B4BEL4B</a>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="tab"> 22 april</div>
+				<!--<a href="https://www.facebook.com/events/1669128163347880/">facebook</a>-->
+				<div class="event">
+					Screening <!--of <i>Free Angela and All Political Prisoners</i>--> in BAMPFA's Theater 2
+				</div>
+			</div>
+
+			<div class="container push">
+				<div class="tab"> 29 april</div>
+				<!--<a href="https://www.facebook.com/events/1669128163347880/">facebook</a>-->
+				<div class="event BAMFEST">
+					BAMFEST2016
+				</div>
+			</div>
+
 		</div>
 	</div>
 
@@ -685,7 +716,7 @@
 		<section id="right">
 			<h2>Instructions</h2>
 
-			<p><b><a href="SCAppQuestions2016.pdf" target="_blank">Download our application as a pdf</a></b> and submit all applications by <a href="#social">email</a> to bampfasc@gmail.com. Please submit all additional materials to the museum front desk. Paper copies of applications discouraged.</p>
+			<p>Application currently closed. <!--<b><a href="SCAppQuestions2016.pdf" target="_blank">  Check back next semester!Download our application as a pdf</a></b> and submit all applications by <a href="#social">email</a> to bampfasc@gmail.com. Please submit all additional materials to the museum front desk. Paper copies of applications discouraged.</p>-->
 				
 			<form action="application.php" method="post">
 				<div id="stepone">
