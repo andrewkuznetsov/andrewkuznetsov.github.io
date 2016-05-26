@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <!-- make calendar into table, add resize, add lightuplocation, create functional form, make app viewable only on certain dates -->
 <head>
 	<link rel="icon" href="http://andrew.kuznet.net/bampfa.png"/>
@@ -22,8 +22,6 @@
 			if(scroll > 100 && scroll < 150 && scroll > lastScrollTop)
 			{
 				$("#bottombar").animate({'bottom': '0px'}, 800);
-
-				$('#bottombar .selected').removeClass('selected');
 			}
 			if (scroll == 0)
 			{
@@ -98,10 +96,14 @@
 			margin: 0px;
 			overflow-x: hidden;
 		}
+		html, body
+		{
+			height: 100%;
+		}
 		.fill
 		{
 			width: 100%;
-			min-height: 150%;
+			min-height: 100%;
 			color: #fff;
 			padding: 30px 50px;
 			overflow-x: hidden;
