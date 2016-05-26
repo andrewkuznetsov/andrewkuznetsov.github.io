@@ -10,9 +10,40 @@
 
 	<script src="jquery-2.1.4.min.js"></script>
 	<script src="jquery.flip.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var lastScrollTop = 0;
+		var unitY = $(window).height();
 
+		$(window).scroll(function(){
+			var scroll = $(window).scrollTop();
+
+			//scroll
+			if(scroll > 100 && scroll < 150 && scroll > lastScrollTop)
+			{
+				$("#bottombar").animate({'bottom': '0px'}, 800);
+
+				$('#bottombar .selected').removeClass('selected');
+			}
+			if (scroll == 0)
+			{
+
+				$("#bottombar").animate({'bottom': '-100px'}, 800);
+			}
+			lastScrollTop = scroll;
+		});
+
+		$("a[href='#top']").click(function(){
+			$('#bottombar .selected').removeClass('selected');
+			$('#bottombar .top').addClass('selected');
+			$('html, body').animate({scrollTop: 0}, 1000);
+		});
+	});
+	</script>
 	<script>
 		$(document).ready(function(){
+
+			
 			$("a[href='#about_us']").click(function() {
     			$('html, body').animate({scrollTop: $("a[name='about_us']").offset().top + 30}, 1000);
     			$('#bottombar .selected').removeClass('selected');
@@ -48,15 +79,6 @@
     			$('#bottombar .selected').removeClass('selected');
     			$('#bottombar .social').addClass('selected');
 			});
-			$("a[href='#top']").click(function() {
-    			$('html, body').animate({scrollTop: $("a[name='top']").offset().top + 30}, 1000);
-    			$('#bottombar .selected').removeClass('selected');
-    			$('#bottombar .top').addClass('selected');
-				$("#bottombar").animate({'bottom': '-100px'}, 800);
-			});
-			$("ul#navigation a").click(function(){
-				$("#bottombar").animate({'bottom': '0px'}, 800);
-			});
 
 			$('#toStepTwo').click(function(){
 				$('#stepone').hide();
@@ -66,6 +88,7 @@
 				$('#steptwo').hide();
 				$('#stepone').show();
 			});
+
 			$(".staff").flip();
 		});
 	</script>
